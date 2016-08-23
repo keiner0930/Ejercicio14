@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sony
@@ -120,11 +122,20 @@ public class Principal14 extends javax.swing.JFrame {
     String res;
     int dias,vtotal;
     
+    if(txtDias.getText().isEmpty()){
+     getToolkit().beep();
+     JOptionPane.showMessageDialog(this, "Digite El Numero de Dias","Error",JOptionPane.ERROR_MESSAGE);
+     txtDias.requestFocusInWindow();
+     }
+    
+    else{
     dias= Integer.parseInt(txtDias.getText());
     vtotal=(200000*dias)-100000;
         
     res= String.valueOf(vtotal);
     txtTotal.setText(res);
+    
+    }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
